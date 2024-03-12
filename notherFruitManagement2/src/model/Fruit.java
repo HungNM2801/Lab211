@@ -1,7 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package model;
 
+/**
+ *
+ * @author HÙNG
+ */
 public class Fruit {
-
+    
     private int fruitID;
     private String fruitName;
     private double fruitPrice;
@@ -56,5 +64,12 @@ public class Fruit {
         return fruitOrigin;
     }
 
-
+    @Override
+    public String toString() {
+        return "Fruit{" + "fruitID=" + fruitID + ", fruitName=" + fruitName + ", fruitPrice=" + fruitPrice + ", fruitQuantity=" + fruitQuantity + ", fruitOrigin=" + fruitOrigin + '}';
+    }
+    
+    
+    
+    
 }
