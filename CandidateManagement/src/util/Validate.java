@@ -4,7 +4,12 @@
  */
 package util;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import model.ExperienceCandidate;
+import model.FresherCandidate;
+import model.InternCandidate;
+import model.Level;
 
 /**
  *
@@ -200,6 +205,45 @@ public class Validate {
                 System.out.println("Invalid input. Please enter valid input. ");
         }
         return name;
+    }
+    
+    public boolean checkIDInExpList(ArrayList<Level> listOfAllCandidate, String id) {
+        
+        for(Level allCandidate : listOfAllCandidate) {
+            for(ExperienceCandidate expCandidate : allCandidate.getListOfExperienceCandidate()) {
+                if (expCandidate.getCandidate().getCandidateID().equalsIgnoreCase(id)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+        
+    }
+    
+    public boolean checkIDInFresherList(ArrayList<Level> listOfAllCandidate, String id) {
+
+        for(Level allCandidate : listOfAllCandidate) {
+            for(FresherCandidate fresherCandidate : allCandidate.getListOfFresherCandidate()) {
+                if (fresherCandidate.getCandidate().getCandidateID().equalsIgnoreCase(id)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+
+    }
+
+    public boolean checkIDInInternList(ArrayList<Level> listOfAllCandidate, String id) {
+
+        for(Level allCandidate : listOfAllCandidate) {
+            for(InternCandidate internCandidate : allCandidate.getListOfInternCandidate()) {
+                if (internCandidate.getCandidate().getCandidateID().equalsIgnoreCase(id)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+
     }
     
     

@@ -10,7 +10,7 @@ package gui;
  */
 public class Menu {
    
-    public void display() {
+    public static void display() {
         System.out.println("CANDIDATE MANAGEMENT SYSTEM");
         System.out.println("1. Experience");
         System.out.println("2. Fresher");

@@ -15,14 +15,25 @@ public class FresherCandidate {
     private int candidateGraduationDate;
     private String candidateGraduationRank;
     private String candidateEducation;
-    ArrayList<Candidate> listOfCandidate;
+    private int candidateType;
+    private Candidate candidate;
 
-    public FresherCandidate(int candidateGraduationDate, String candidateGraduationRank, String candidateEducation, ArrayList<Candidate> listOfFresherCandidate) {
+    public FresherCandidate(int candidateGraduationDate, String candidateGraduationRank, String candidateEducation, int candidateType, Candidate candidate) {
         this.candidateGraduationDate = candidateGraduationDate;
         this.candidateGraduationRank = candidateGraduationRank;
         this.candidateEducation = candidateEducation;
-        this.listOfCandidate = listOfFresherCandidate;
+        this.candidateType = candidateType;
+        this.candidate = candidate;
     }
+
+    public int getCandidateType() {
+        return candidateType;
+    }
+
+    public void setCandidateType(int candidateType) {
+        this.candidateType = candidateType;
+    }
+
 
     public void setCandidateGraduationDate(int candidateGraduationDate) {
         this.candidateGraduationDate = candidateGraduationDate;
@@ -48,12 +59,17 @@ public class FresherCandidate {
         return candidateEducation;
     }
 
-    public ArrayList<Candidate> getListOfCandidate() {
-        return listOfCandidate;
+    public Candidate getCandidate() {
+        return candidate;
     }
 
     @Override
     public String toString() {
-        return "FresherCandidate{" + "candidateGraduationDate=" + candidateGraduationDate + ", candidateGraduationRank=" + candidateGraduationRank + ", candidateEducation=" + candidateEducation + ", listOfFresherCandidate=" + listOfCandidate + '}';
+        return candidate + "|" + candidateGraduationDate + "|" + candidateGraduationRank + "|" 
+                + candidateEducation + "|" + candidateType;
     }
+    
+    
+
+    
 }

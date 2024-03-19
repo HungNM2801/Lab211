@@ -5,6 +5,8 @@
 package drive;
 
 import controller.CreateCandidate;
+import controller.SearchCandidate;
+import static gui.Menu.display;
 import java.util.ArrayList;
 import model.Level;
 import util.Validate;
@@ -21,12 +23,36 @@ public class run {
         
         Validate validate = new Validate();
         CreateCandidate createCandidate = new CreateCandidate();
+        SearchCandidate searchCandidate = new SearchCandidate();
         
-//        validate.checkBirthDate();
-//        validate.checkPhoneNumber();
-//        validate.checkRankOfGraduation();
+
+        int userInput = 0;
         
-        createCandidate.addCandidateLevel(listOfAllCandidate);
+        while (userInput != 5) {
+            display();
+            userInput = validate.checkInt();
+            
+            switch(userInput) {
+                case 1:
+                    createCandidate.createCandidate(listOfAllCandidate, 0);
+                    break;
+                case 2:
+                    createCandidate.createCandidate(listOfAllCandidate, 1);
+                    break;
+                case 3:
+                    createCandidate.createCandidate(listOfAllCandidate, 2);
+                    break;
+                case 4:
+                    searchCandidate.searchCandidate(listOfAllCandidate);
+                    break;
+                case 5:
+                    System.out.println("PROGRAM TERMINATED.");
+                    break;
+                    
+                default:
+                    System.out.println("Invalid input");
+                    break;
+            }
+        }
     }
-    
 }

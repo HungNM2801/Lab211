@@ -4,7 +4,6 @@
  */
 package model;
 
-import java.util.ArrayList;
 
 /**
  *
@@ -15,13 +14,23 @@ public class InternCandidate {
     private int candidateMajor;
     private String candidateSemester;
     private String candidateUniversityName;
-    ArrayList<Candidate> listOfCandidate;
+    private int candidateType;
+    private Candidate candidate;
 
-    public InternCandidate(int candidateMajor, String candidateSemester, String candidateUniversityName, ArrayList<Candidate> listOfInternCandidate) {
+    public InternCandidate(int candidateMajor, String candidateSemester, String candidateUniversityName, int candidateType, Candidate candidate) {
         this.candidateMajor = candidateMajor;
         this.candidateSemester = candidateSemester;
         this.candidateUniversityName = candidateUniversityName;
-        this.listOfCandidate = listOfInternCandidate;
+        this.candidateType = candidateType;
+        this.candidate = candidate;
+    }
+
+    public void setCandidateType(int candidateType) {
+        this.candidateType = candidateType;
+    }
+
+    public int getCandidateType() {
+        return candidateType;
     }
 
     public void setCandidateMajor(int candidateMajor) {
@@ -48,12 +57,14 @@ public class InternCandidate {
         return candidateUniversityName;
     }
 
-    public ArrayList<Candidate> getListOfCandidate() {
-        return listOfCandidate;
+    public Candidate getCandidate() {
+        return candidate;
     }
 
     @Override
     public String toString() {
-        return "InternCandidate{" + "candidateMajor=" + candidateMajor + ", candidateSemester=" + candidateSemester + ", candidateUniversityName=" + candidateUniversityName + ", listOfInternCandidate=" + listOfCandidate + '}';
+        return candidate + "|" + candidateMajor + "|" + candidateSemester + "|" + candidateUniversityName + "|" + candidateType;
     }
+
+    
 }

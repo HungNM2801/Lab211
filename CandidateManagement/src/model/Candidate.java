@@ -85,7 +85,8 @@ public class Candidate {
 
     @Override
     public String toString() {
-        return "Candidate{" + "candidateID=" + candidateID + ", candidateFirstName=" + candidateFirstName + ", candidateLastName=" + candidateLastName + ", candidateBirthDate=" + candidateBirthDate + ", candidateAddress=" + candidateAddress + ", candidatePhoneNumber=" + candidatePhoneNumber + ", candidateEmail=" + candidateEmail + '}';
+        return candidateFirstName + candidateLastName + "|" + candidateBirthDate + "|"
+                + candidateAddress + "|" + candidatePhoneNumber + "|" + candidateEmail;
     }
 
    

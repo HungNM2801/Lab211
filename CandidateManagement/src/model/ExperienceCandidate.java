@@ -13,12 +13,14 @@ import java.util.ArrayList;
 public class ExperienceCandidate {
     private int expInYear;
     private String proSkill;
-    ArrayList<Candidate> listOfCandidate;
+    private int candidateType;
+    private Candidate candidate;
 
-    public ExperienceCandidate(int expInYear, String proSkill, ArrayList<Candidate> listOfExperienceCandidate) {
+    public ExperienceCandidate(int expInYear, String proSkill, int candidateType, Candidate candidate) {
         this.expInYear = expInYear;
         this.proSkill = proSkill;
-        this.listOfCandidate = listOfExperienceCandidate;
+        this.candidateType = candidateType;
+        this.candidate = candidate;
     }
 
     public void setExpInYear(int expInYear) {
@@ -37,14 +39,24 @@ public class ExperienceCandidate {
         return proSkill;
     }
 
-    public ArrayList<Candidate> getListOfCandidate() {
-        return listOfCandidate;
+    public Candidate getCandidate() {
+        return candidate;
+    }
+
+    public int getCandidateType() {
+        return candidateType;
+    }
+
+    public void setCandidateType(int candidateType) {
+        this.candidateType = candidateType;
     }
 
     @Override
     public String toString() {
-        return "ExperienceCandidate{" + "expInYear=" + expInYear + ", proSkill=" + proSkill + ", listOfExperienceCandidate=" + listOfCandidate + '}';
+        return candidate + "|" + expInYear + "|" + proSkill + "|" + candidateType;
     }
     
+    
+
     
 }
